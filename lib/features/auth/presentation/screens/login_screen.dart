@@ -60,12 +60,14 @@ class LoginScreen extends StatelessWidget {
                         ? null
                         : () async {
                             await provider.login();
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => const HomeScreen(),
-                              ),
-                            );
+                            if (provider.phoneController.text.isNotEmpty) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const HomeScreen(),
+                                ),
+                              );
+                            }
                           },
                     child: Container(
                       height: 50,
