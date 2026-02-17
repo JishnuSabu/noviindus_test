@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:noviindus_test/core/di/injection.dart' as di;
@@ -61,7 +59,6 @@ class HomeScreen extends StatelessWidget {
                       onTap: () async {
                         final prefs = await SharedPreferences.getInstance();
                         final accessToken = prefs.getString("access_token");
-                        log(accessToken.toString());
                         Navigator.push(
                           context,
                           MaterialPageRoute(

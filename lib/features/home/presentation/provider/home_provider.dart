@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:noviindus_test/features/home/domain/entities/category_entity.dart';
 import 'package:noviindus_test/features/home/domain/entities/feed_entity.dart';
@@ -75,7 +73,6 @@ class HomeProvider extends ChangeNotifier {
   }
 
   Future<void> fetchMyFeeds({required String token}) async {
-    log("Hi");
     try {
       isMyFeedLoading = true;
       notifyListeners();

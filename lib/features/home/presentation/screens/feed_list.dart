@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:noviindus_test/features/home/domain/entities/feed_entity.dart';
 import 'package:noviindus_test/features/home/presentation/provider/home_provider.dart';
@@ -17,8 +15,6 @@ class FeedList extends StatelessWidget {
       itemCount: feeds.length,
       itemBuilder: (context, index) {
         final feed = feeds[index];
-
-        log(feed.toString() + "feeedsss");
         return FeedCard(
           feed: feed,
           isPlaying: provider.currentlyPlayingId == feed.id,
