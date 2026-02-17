@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:noviindus_test/features/auth/data/models/auth_model.dart';
 
@@ -19,7 +17,6 @@ class AuthRemoteDataSource {
       });
 
       final response = await dio.post("otp_verified", data: formData);
-      log(response.toString());
       if (response.statusCode == 200 || response.statusCode == 202) {
         return AuthModel.fromJson(response.data);
       } else {

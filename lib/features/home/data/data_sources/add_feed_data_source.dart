@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 
 class AddFeedDataSource {
@@ -40,12 +38,8 @@ class AddFeedDataSource {
         },
       );
     } on DioException catch (e) {
-      log("DIO ERROR: ${e.response?.statusCode}");
-      log("DIO ERROR DATA: ${e.response?.data}");
-      log("DIO ERROR MESSAGE: ${e.message}");
       rethrow;
     } catch (e) {
-      log("UNKNOWN ERROR: $e");
       rethrow;
     }
   }
